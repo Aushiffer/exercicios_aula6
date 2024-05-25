@@ -235,6 +235,7 @@ def ex11():
         print(f'Especificidade: {round(espec(verdadeiro_neg, falso_pos), 2)}%')
         print(f'Sensibilidade: {round(sensi(verdadeiro_pos, falso_neg), 2)}%')
 
+
 # Função principal que executa a solução dos exercícios
 def main():
         ex1()
