@@ -99,11 +99,50 @@ def ex4():
         print(f'Batimentos ideais: {num_ideal}')
 
 
+def ex5():
+        # Exercício 5: qual das turmas a seguir tem a maior idade média?
+        turma1 = [20, 22, 21, 23, 20]
+        turma2 = [22, 23, 21, 21, 18]
+        media_t1 = media(turma1)
+        media_t2 = media(turma2)
+
+        if (media_t1 > media_t2):
+                print('A turma 1 tem a maior idade média')
+        elif (media_t2 > media_t1):
+                print('A turma 2 tem a maior idade média')
+        else:
+                print('As duas turmas possuem a mesma idade média')
+
+
+def ex6():
+        # Exercício 6: qual dos dois times a seguir é melhor?
+
+        # dados time1:
+        vitorias1 = 20
+        derrotas1 = 11
+
+        # dados time2:
+        vitorias2 = 13
+        derrotas2 = 6
+
+        porc_t1 = porcentagem(vitorias1, vitorias1 + derrotas1)
+        porc_t2 = porcentagem(vitorias2, vitorias2 + derrotas2)
+
+        if (porc_t1 > porc_t2):
+                print('O time 1 é melhor')
+        elif (porc_t1 < porc_t2):
+                print('O time 2 é melhor')
+        else:
+                print('Os dois times são iguais')
+
+
 def main():
         ex1()
         ex2()
         ex3()
         ex4()
+        ex5()
+        ex6()
 
 
 main() # Chamando a função principal
