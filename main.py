@@ -93,7 +93,9 @@ def ex4():
         num_ideal = 0
 
         for batimento in batimentos:
-                if ((margem_erro(batimento, batimento_ideal) < 25.0) and (margem_erro(batimento, batimento_ideal) > -25.0)):
+                erro = margem_erro(batimento, batimento_ideal)
+
+                if ((erro < 25.0) and (erro > -25.0)):
                         num_ideal += 1
                 
         print(f'Batimentos ideais: {num_ideal}')
