@@ -1,3 +1,5 @@
+# Exercícios formulados por Roberto Tomchak em https://github.com/robertotomchak/imigrantesavancado/blob/main/Aula6.ipynb
+
 import statistics as stats
 
 def media(dados):
@@ -165,6 +167,75 @@ def ex8():
         print(f'Média dos produtos com custo maior que 40: {round(soma / qtd_40mais, 2)}')
 
 
+def ex9_10():
+        # Exercício 9: qual a média dos salários abaixo?
+        # qual a média após removermos os outliers?
+        # considere que um outlier é um número menor que (média - desvio padrão)
+        # ou maior que (média + desvio padrão)
+        salarios = [
+                1200, 
+                700, 
+                30000, 
+                5000, 
+                13000, 
+                6360, 
+                8690, 
+                1230, 
+                1100, 
+                1976, 
+                10, 
+                13000, 
+                42000,
+                9600, 
+                6000, 
+                8500, 
+                100, 
+                8700, 
+                8731
+        ]
+
+        media_salarios = media(salarios)
+        desvio_salarios = desvio_padrao(salarios)
+        min_outlier = media_salarios - desvio_salarios
+        max_outlier = media_salarios + desvio_salarios
+        soma_s_outlier = 0
+        len_soma_s_outlier = 0
+
+        for salario in salarios:
+                if ((salario >= min_outlier) and (salario <= max_outlier)):
+                        soma_s_outlier += salario
+                        len_soma_s_outlier += 1
+
+        media_s_outlier = round(soma_s_outlier / len_soma_s_outlier, 2)
+
+        # Exercício 10: calcule a mediana dos dados anteriores e compare com a média
+        # após remover os outliers
+
+        mediana_salarios = mediana(salarios)
+
+        print(f'Média sem outliers dos salários: {media_s_outlier}')
+        print(f'Mediana dos salários: {mediana_salarios}')
+
+
+def ex11():
+        # Exercício 11: um certo exame médico para uma doença foi testado em 300 pessoas
+        # 76 estão doentes, as outras não doentes
+        # dos doentes, 50 receberam resultado positivo (e as outras negativo)
+        # dos não doentes, apenas 13 receberam resultado positivo
+        # qual a acurácia, especificidade e sensibilidade
+        total = 300
+        doentes = 76
+        saudaveis = total - doentes
+        verdadeiro_pos = 50
+        verdadeiro_neg = saudaveis - 13
+        falso_neg = doentes - verdadeiro_pos
+        falso_pos = 13
+
+        print(f'Acurácia: {round(acuracia(verdadeiro_pos + verdadeiro_neg, total), 2)}%')
+        print(f'Especificidade: {round(espec(verdadeiro_neg, falso_pos), 2)}%')
+        print(f'Sensibilidade: {round(sensi(verdadeiro_pos, falso_neg), 2)}%')
+
+# Função principal que executa a solução dos exercícios
 def main():
         ex1()
         ex2()
@@ -174,6 +245,8 @@ def main():
         ex6()
         ex7()
         ex8()
+        ex9_10()
+        ex11()
 
 
 main() # Chamando a função principal
