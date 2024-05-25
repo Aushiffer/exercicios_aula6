@@ -138,6 +138,33 @@ def ex6():
                 print('Os dois times são iguais')
 
 
+def ex7():
+        # Exercício 7: a lista a seguir tem a idade de várias pessoas numa festa
+        # qual a porcentagem de maiores de idade na festa?
+        idades = [18, 19, 22, 17, 13, 20, 15, 16, 16, 23, 29]
+        maiores = 0
+
+        for idade in idades:
+                if (idade >= 18):
+                        maiores += 1
+        
+        print(f'Porcentagem de maiores de idade na festa: {round(porcentagem(maiores, len(idades)), 2)}')
+
+
+def ex8():
+        # Exercício 8: qual a média dos produtos que custam mais que 40?
+        produtos = [23, 47, 62, 44, 21, 8, 19, 88]
+        soma = 0
+        qtd_40mais = 0
+
+        for produto in produtos:
+                if (produto > 40):
+                        soma += produto
+                        qtd_40mais += 1
+
+        print(f'Média dos produtos com custo maior que 40: {round(soma / qtd_40mais, 2)}')
+
+
 def main():
         ex1()
         ex2()
@@ -145,6 +172,8 @@ def main():
         ex4()
         ex5()
         ex6()
+        ex7()
+        ex8()
 
 
 main() # Chamando a função principal
