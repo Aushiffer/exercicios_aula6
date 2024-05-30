@@ -150,7 +150,7 @@ def ex7():
                 if (idade >= 18):
                         maiores += 1
         
-        print(f'Porcentagem de maiores de idade na festa: {round(porcentagem(maiores, len(idades)), 2)}')
+        print(f'Porcentagem de maiores de idade na festa: {round(porcentagem(maiores, len(idades)), 2)}%')
 
 
 def ex8():
